@@ -14,7 +14,7 @@ class Post(Base):
   created_at = Column(DateTime, default=datetime.now)
   updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
   vote_count = column_property(
-  count(select(Vote.id).where(Vote.post_id == id))#######################
+    select(count(Vote.id)).where(Vote.post_id == id)#########################
 )
   
   user = relationship('User')
