@@ -12,7 +12,7 @@ def create_app(test_config=None):
   app = Flask(__name__, static_url_path='/')
   app.url_map.strict_slashes = False
   app.config.from_mapping(
-    SECRET_KEY=getenv('SECRET_KEY')
+    SECRET_KEY=getenv('SECRET')
   )
   app.jinja_env.filters['format_url'] = filters.format_url
   app.jinja_env.filters['format_date'] = filters.format_date
